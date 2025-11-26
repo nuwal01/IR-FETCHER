@@ -2,7 +2,7 @@ import os
 import requests
 import streamlit as st
 
-API = os.getenv("IR_API", "http://localhost:8008")
+API = os.getenv("IR_API", "http://127.0.0.1:8008")
 
 st.title("IR Downloader")
 
