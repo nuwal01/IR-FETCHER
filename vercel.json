@@ -2,6 +2,36 @@
   "version": 2,
   "builds": [
     {
+      "src": "backend/Dockerfile",
+      "use": "@vercel/docker"
+    }
+  ],
+  "routes": [
+    {
+      "src": "^/health$",
+      "dest": "/"
+    },
+    {
+      "src": "^/settings$",
+      "dest": "/"
+    },
+    {
+      "src": "^/download$",
+      "dest": "/"
+    },
+    {
+      "src": "^/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "DATABASE_BACKEND": "sqlite"
+  }
+}
+{
+  "version": 2,
+  "builds": [
+    {
       "src": "frontend-next/package.json",
       "use": "@vercel/next"
     }
